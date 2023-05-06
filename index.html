@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>LLMCache - How to Build a Cache with Relevance AI and Redis</title>
+  <style>
+    .container {
+      margin: 0 auto;
+      width: 800px;
+    }
+  </style>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>LLMCache.com</h1>
+      <h2>Semantic cache for LLM prompts using Chains</h2>
+		</header>
+		<p>Caching LLM prompts is a great way to reduce expenses. It works by using vector search to identify similar prompts and then returning its response. If there are no similar responses, the request is passed onto the LLM provider to generate the completion.</p>
+		<ol>
+			<li>Visit <a href="https://chain.relevanceai.com/templates">chain.relevanceai.com/templates</a></li>
+			<li>Select the LLMCache.com template</li>
+			<li>Clone the AI chain in Relevance AI</li>
+      <li>Create a Redis database (you can do so via Redis Cloud or Redis Stack)</li>
+      <li>Set eviction strategy to always-lfu and create an index with <pre><code>FT.CREATE llmcache ON JSON PREFIX 1 "llm:" SCHEMA $.prompt_vector_ as prompt_vector_ VECTOR HNSW 6 TYPE FLOAT64 DIM 1536 DISTANCE_METRIC COSINE</code></pre></li>
+			<li>Use the deployed API for future prompt requests</li>
+		</ol>
+		<p>If you need help with any of these steps, you can reach out to the Relevance AI support team via live chat.</p>
+    <p>- Daniel, Founder @ Relevance AI</p>
+	</div>
+</body>
+</html>
