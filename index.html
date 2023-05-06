@@ -23,10 +23,12 @@
 			<li>Clone the AI chain in Relevance AI</li>
       <li>Create a Redis database (you can do so via Redis Cloud or Redis Stack)</li>
       <li>Set eviction strategy to always-lfu and create an index with <pre><code>FT.CREATE llmcache ON JSON PREFIX 1 "llm:" SCHEMA $.prompt_vector_ as prompt_vector_ VECTOR HNSW 6 TYPE FLOAT64 DIM 1536 DISTANCE_METRIC COSINE</code></pre></li>
+      <li>Add redis connection string to API key in Project Settings with key "redis-external"</li>
 			<li>Use the deployed API for future prompt requests</li>
 		</ol>
 		<p>If you need help with any of these steps, you can reach out to the Relevance AI support team via live chat.</p>
     <p>- Daniel, Founder @ Relevance AI</p>
+    <img src="http://llmcache.com/LLM-cache-stack.png" height="700px" alt="Stack diagram showcasing an LLM chain built and deployed with Relevance AI to provide LLM caching" />
 	</div>
 </body>
 </html>
